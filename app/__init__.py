@@ -8,13 +8,12 @@ app.config.from_object('config')
 
 db = SQLAlchemy(app)
 
-from app import views, models
-from .models import User, Role, roles_users
 
+from .models import User, Role, roles_users
 
 # Setup Flask-Security
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
 
 
-
+from app import views, models
