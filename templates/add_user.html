@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form method="post" action="/post_user">
+        <label>Username:</label>
+        <input type="text" id="name" name="name"/>
+        <label>Email:</label>
+        <input type="text" id="email" name="email"/>
+        <input type="submit"/>
+    </form>
+
+    {% for user in users %}
+            <li>{{ user.id }}. {{user.name}} - {{user.email}}</li>
+    {% endfor %}
+
+    {{ user2.name }}
+</body>
+</html>
