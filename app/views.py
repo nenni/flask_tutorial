@@ -57,10 +57,11 @@ def answerquestion(id=None):
             answer = request.form.get("answer", None)
             # print(answer)
             question_tbl_entries = Questions.query.filter_by(id=int(id)).first()
+            question = question_tbl_entries.question
             # print(question_tbl_entries.answer, answer)
             if question_tbl_entries.answer == answer:
                 # print("answers ok")
-                return redirect(url_for('index'))
+                return render_template('answer_response_ok.html', answer=answer, question=question)
             else:
                 # print("answers nok")
                 error = 'Invalid answer'
