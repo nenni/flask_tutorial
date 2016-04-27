@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block title %}
+    Your question and answer is:
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<section>
+    <div>
+        You question is {{ question }}
+        <br>
+        You answer is {{ submitted_answer }}
+    </div>
+</section>
+
+{% include "_menu_questions.html" %}
+{% endblock %}

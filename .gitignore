@@ -90,6 +90,7 @@ ENV/
 #Temporary files
 temp*.py
 .DS_Store
+*.txt
 
 #DB file
 *.db

@@ -3,18 +3,18 @@
 {% include "security/_messages.html" %}
 
 {% block content %}
-<br/>
-<br/>
-<div class="container">
-  <h1>Login</h1>
-  <form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
-    {{ login_user_form.hidden_tag() }}
-    {{ render_field_with_errors(login_user_form.email) }}
-    {{ render_field_with_errors(login_user_form.password) }}
-    {{ render_field_with_errors(login_user_form.remember) }}
-    {{ render_field(login_user_form.next) }}
-    {{ render_field(login_user_form.submit) }}
-  </form>
-</div>
-{% include "security/_menu.html" %}
+<section id="login">
+  <div class="container">
+    <h1>Login</h1>
+    <form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+      {{ login_user_form.hidden_tag() }}
+      {{ render_field_with_errors(login_user_form.email) }}
+      {{ render_field_with_errors(login_user_form.password) }}
+      {{ render_field_with_errors(login_user_form.remember) }}
+      {{ render_field(login_user_form.next) }}
+      {{ render_field(login_user_form.submit, class="bnt btn-primary active") }}
+    </form>
+    {% include "security/_menu.html" %}
+  </div>
+</section>
 {% endblock %}
